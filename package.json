@@ -2,6 +2,7 @@
   "name": "res",
   "version": "1.0.0",
   "scripts": {
+    "prepare": "npm run build",
     "bootstrap": "lerna bootstrap",
     "version": "lerna version",
     "build": "lerna run build --ignore demo",
