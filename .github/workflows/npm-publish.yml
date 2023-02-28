@@ -14,12 +14,14 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@derpierre65'
-      - run: npm install
-      - run: npm publish --access public
+      - run: |
+          cd packages/vue3-drr-grid-layout
+          npm install
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
           name: Assets
-          path: ./dist
+          path: ./packages/vue3-drr-grid-layout/dist
